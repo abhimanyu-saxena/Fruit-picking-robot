@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!-- Name your robot here -->
+<robot name ="husky" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<!-- Include your urdf files here -->
+	<!-- Include Robot's urdf filepath -->
+	<!-- Include Lidar's urdf filepath -->
+	<xacro:include filename="$(find husky)/urdf/husky.urdf"/>
+	<xacro:include filename="$(find manipulator_v5)/urdf/manipulator_v5.urdf"/>
+	<xacro:include filename="$(find basket_assembly)/urdf/basket_assembly.urdf"/>
+	<!-- <xacro:include filename="$(find gripper_v1)/urdf/gripper_v1.urdf"/> -->
+	<!-- <xacro:include filename="$(find husky)/urdf/ydlidar.urdf"/> -->
+
+<!-- Add your gazebo sensors here -->
+	
+
+<!--  Gazebo plugin for control here is already added for you -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/husky</robotNamespace>
+			<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+			<legacyModeNS>true</legacyModeNS>
+		</plugin>
+		<plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+    		<alwaysOn>true</alwaysOn>
+    		<updateRate>50.0</updateRate>
+    		<bodyName>Chassis</bodyName>
+    		<topicName>ground_truth/state</topicName>
+    		<gaussianNoise>0.01</gaussianNoise>
+    		<frameName>world</frameName>
+    		<xyzOffsets>0 0 0</xyzOffsets>
+    		<rpyOffsets>0 0 0</rpyOffsets>
+  		</plugin>
+	</gazebo>
+
+
+<!-- Create a joint between your robot and sensor -->
+<!-- <joint name="link_to_lidar" type="fixed">
+    <parent link="Chassis"/>
+    <child link="base_laser"/>
+	<origin xyz="0 0 0.485775" rpy="0 0 0" />
+</joint> -->
+
+
+<joint name="link_to_manipulator" type="fixed">
+    <parent link="Chassis"/>
+    <child link="base_link"/>
+	<origin xyz="0.2 0 0.505" rpy="0 0 1.57" />
+</joint>
+
+<joint name="link_to_basket" type="fixed">
+    <parent link="Chassis"/>
+    <child link="basket_base"/>
+	<origin xyz="-0.2 0 0.605" rpy="1.57 0 1.57" />
+</joint>
+<!-- <joint name="link_to_gripper" type="fixed">
+    <parent link="joint4_link"/>
+    <child link="gripper_base"/>
+	<origin xyz="0.1 0.425 0.137" rpy="-1.57 0 0" />
+</joint> -->
+</robot>	
+
+

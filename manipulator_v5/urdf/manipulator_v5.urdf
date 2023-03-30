@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="manipulator_v5">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.051468 -1.797E-16 0.10093"
+        rpy="0 0 0" />
+      <mass
+        value="5.4923" />
+      <inertia
+        ixx="0.030998"
+        ixy="5.2555E-17"
+        ixz="-0.013585"
+        iyy="0.04605"
+        iyz="4.7433E-17"
+        izz="0.030998" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_v5/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_v5/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="joint2_link">
+    <inertial>
+      <origin
+        xyz="0.034953 0.1637 -0.12448"
+        rpy="0 0 0" />
+      <mass
+        value="10.126" />
+      <inertia
+        ixx="0.076237"
+        ixy="-0.0067874"
+        ixz="0.0028368"
+        iyy="0.045899"
+        iyz="0.013286"
+        izz="0.062634" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_v5/meshes/joint2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_v5/meshes/joint2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0.203199999999999 0 0.152400000000001"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="joint2_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-6.28318530718"
+      upper="6.28318530718"
+      effort="150.0"
+      velocity="3.14"/>
+  </joint>
+  <link
+    name="joint3_link">
+    <inertial>
+      <origin
+        xyz="0.051468 -0.021293 -0.09866"
+        rpy="0 0 0" />
+      <mass
+        value="5.4923" />
+      <inertia
+        ixx="0.030998"
+        ixy="0.0029002"
+        ixz="0.013272"
+        iyy="0.04537"
+        iyz="-0.0031272"
+        izz="0.031678" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_v5/meshes/joint3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_v5/meshes/joint3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.0954709005415057 0.447120953601814 -0.1524"
+      rpy="1.5707963267949 -1.5707963267949 0" />
+    <parent
+      link="joint2_link" />
+    <child
+      link="joint3_link" />
+    <axis
+      xyz="0 -0.20881649287295 -0.977954841648755" />
+    <limit
+      lower="-3.14159265359"
+      upper="3.14159265359"
+      effort="150.0"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="joint4_link">
+    <inertial>
+      <origin
+        xyz="0.046412 0.18134 0.12587"
+        rpy="0 0 0" />
+      <mass
+        value="5.666" />
+      <inertia
+        ixx="0.076347"
+        ixy="-0.0080337"
+        ixz="-0.0033003"
+        iyy="0.046855"
+        iyz="-0.013175"
+        izz="0.06345" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_v5/meshes/joint4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_v5/meshes/joint4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.203198117462181 -0.0326790281115857 -0.148857670885751"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="joint3_link" />
+    <child
+      link="joint4_link" />
+    <axis
+      xyz="0.00420961908341663 -0.000898853255685867 0.999990735542084" />
+    <limit
+      lower="-6.28318530718"
+      upper="6.28318530718"
+      effort="28.0"
+      velocity="6.28" />
+  </joint>
+
+<joint name="camera_joint" type="fixed">
+    <origin xyz="0.02 0.4395 0.14" rpy="-1.57 3.14 0"/>
+    <parent link="joint4_link"/>
+    <child link="camera_link"/>
+</joint>
+
+<link name="camera_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.02"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+</link>
+
+<joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57 -1.57 -1.57"/>
+    <parent link="camera_link"/>
+    <child link="camera_optical_link"/>
+</joint>
+
+<link name="camera_optical_link">
+</link>
+
+<transmission name="joint2_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint2">
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint2_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint3_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint3">
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint3_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint4_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint4">
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint4_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<gazebo reference="camera_optical_link">
+		<!-- <gravity>true</gravity> -->
+		<!-- Gazebo has fixed set of Sensors types. Check them out here <> -->
+		<sensor name="camera" type="camera"> 
+			<!-- Add in your sensor characteristics -->
+			<pose> 0 0 0 0 0 0 </pose>
+			<visualise>true</visualise>
+			<update_rate>40</update_rate>
+			<!-- <always_on>true</always_on> -->
+        <camera>
+                    <horizontal_fov>1.089</horizontal_fov>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>300</far>
+                    </clip>
+          </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            	<!-- Use topic name as /my_robot/scan -->
+				<topicName></topicName> 
+				<frameName>camera_optical_link</frameName>
+			</plugin>
+		</sensor>
+	</gazebo>
+</robot>

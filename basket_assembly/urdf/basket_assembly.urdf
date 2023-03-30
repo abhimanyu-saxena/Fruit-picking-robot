@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="basket_assembly">
+  <link
+    name="basket_base">
+    <inertial>
+      <origin
+        xyz="-1.1365E-16 0 0.080634"
+        rpy="0 0 0" />
+      <mass
+        value="4.1855" />
+      <inertia
+        ixx="0.026882"
+        ixy="-5.6424E-34"
+        ixz="-1.1381E-17"
+        iyy="0.073211"
+        iyz="1.4755E-18"
+        izz="0.087657" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basket_assembly/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basket_assembly/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
